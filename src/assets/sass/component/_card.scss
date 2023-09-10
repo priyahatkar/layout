@@ -1,0 +1,23 @@
+
+
+
+.imgInfo{
+    height: 200px;
+    // margin-top: 60px;
+    img{
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.card{
+    background-color: rgba(#fff, .9);
+    cursor: pointer;
+}
+
+.imgInfos{
+    height: 250px;
+    img{
+        height: 100%;
+        object-fit: cover;
+    }
+}

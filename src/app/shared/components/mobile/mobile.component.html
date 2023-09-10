@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card my-4" *ngFor="let mo of moArray"
+            [routerLink]="['/mobile', mo.moId]">
+            <div class="card-body">
+                <div class="row d-flex justify-content-around align-items-center">
+                    <div class="col-md-4 offset-md-1">
+                        <h2><strong>{{mo.name}}</strong></h2>
+                        <h3>Price : <strong>{{mo.price}}</strong> </h3>
+                        <h3>Ram : <strong>{{mo.ram}}</strong> </h3>
+                        <h3 [ngClass]="{
+                            'text-danger' : mo.rating <4,
+                            'text-success' : mo.rating >4.1
+                        }">Rating : {{mo.rating}} <i class="fa-solid fa-star"></i></h3>
+                        <h3 [ngClass]="{
+                        'text-info': mo.status === 'Available',
+                        'text-danger' : mo.status === 'OutOfStock'
+                        }">status : <strong>{{mo.status}}</strong></h3>
+                        
+                    </div>
+                    <div class="col-md-7">
+                        <div class="imgInfo">
+                            <img src="{{mo.imgUrl}}" alt="{{mo.name}}" title="{{mo.name}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

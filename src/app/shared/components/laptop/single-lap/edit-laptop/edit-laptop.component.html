@@ -1,0 +1,22 @@
+ 
+
+<section>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 my-5">
+            <div class="form-group">
+                <label for="pName" class="text-white">Name</label>
+                <input type="text" #lName [value]="lapInfo.name" id="lName" placeholder="User Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="status" class="text-white">status</label>
+                <select [value]="lapInfo.status" #status class="form-control">
+                    <option value="Available">Available</option>
+                    <option value="OutOfStock">Out Of Stock</option>
+                </select>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-info" (click)="onUpdateLaptop(lName ,status)">Update Product</button>
+            </div>
+        </div>
+    </div>
+</section>

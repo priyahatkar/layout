@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <div class="card my-5">
+            <div class="card-body">
+                <div class="row  d-flex justify-content-center align-items-center">
+                    <div class="col-md-7">
+                        <h2>
+                            {{compInfo.name}}
+                        </h2>
+                        <h3 class="text-muted"> Price : <strong>{{compInfo.price |currency : 'INR'}}</strong></h3>
+                        <h3>Ram : <strong>{{compInfo.ram}}</strong> </h3>
+                        <h3>Details :{{compInfo.details}}</h3>
+                        <h3 [ngClass]="{
+                            'text-info': compInfo.status === 'Available',
+                            'text-danger' : compInfo.status === 'OutOfStock'
+                        }">status : <strong>{{compInfo.status}}</strong></h3>
+                        <h3 [ngClass]="{
+                            'text-danger' : compInfo.rating <4,
+                            'text-success' : compInfo.rating >4.1
+                        }">Rating : <strong>{{compInfo.rating}}</strong> <i class="fa-solid fa-star"></i></h3>
+                        
+                    </div>
+                    <div class="col-md-5">
+                        <div class="imgInfo">
+                            <img src="{{compInfo.imgUrl}}" alt="{{compInfo.name}}" title="{{compInfo.name}}">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-info mx-4" [routerLink]="['editComp']">Edit Computer Details</button>
+                    <button class="btn btn-warning" [routerLink]="['/addToCard']"
+                    (click)="onAddNewProduct()">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

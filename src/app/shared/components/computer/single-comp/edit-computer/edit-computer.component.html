@@ -1,0 +1,22 @@
+
+
+<section>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 my-5">
+            <div class="form-group">
+                <label for="pName" class="text-white">Name</label>
+                <input type="text" #pName [value]="editCompObj.name" id="pName" placeholder="User Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pName" class="text-white">status</label>
+                <select name="" #status [value]="editCompObj.status" class="form-control">
+                    <option value="Available">Available</option>
+                    <option value="OutOfStock">Out Of Stock</option>
+                </select>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-info" (click)="onUpdateProduct(pName ,status)">Update Product</button>
+            </div>
+        </div>
+    </div>
+</section>

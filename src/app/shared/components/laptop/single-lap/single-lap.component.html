@@ -1,0 +1,40 @@
+
+<section>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card my-5">
+                <div class="card-body">
+                    <div class="row d-flex justify-content-around align-items-center">
+                        <div class="col-md-6">
+                            <h2>
+                                {{lapInfo.name}}
+                            </h2>
+                            <h3>Price : <strong> {{lapInfo.price | currency : "INR"}}</strong> </h3>
+                            <h3>Details : {{lapInfo.details}} </h3>
+                            <h3 [ngClass]="{
+                                'text-danger' : lapInfo.status === 'OutOfStock',
+                                'text-warning' : lapInfo.status === 'Available'
+                            }">Status : <strong>{{lapInfo.status}}</strong></h3>
+                            <h3 [ngClass]="{
+                                    'text-success' : lapInfo.rating > '4.5',
+                                    'text-danger' : lapInfo.rating < '4.4'
+                                }">Rating : <strong>{{lapInfo.rating}}</strong>
+                                <i class="fa-solid fa-star"></i>
+                            </h3>
+                        </div>
+                        <div class="col-md-6">
+                            <figure class=" imgInfo p-3">
+                                <img src="{{lapInfo.imgUrl}}" alt="{{lapInfo.name}}" title="{{lapInfo.name}}">
+                            </figure>
+                        </div>
+                        <div class="text-center">
+                            <button [routerLink]="['editLap']" class="btn btn-primary mx-3">Edit Laptop Details</button>
+                            <button class="btn btn-warning" [routerLink]="['/addToCard']"
+                            (click)="onAddNewProduct()">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

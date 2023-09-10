@@ -1,0 +1,21 @@
+
+<section>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 my-5">
+            <div class="form-group">
+                <label for="moName" class="text-white">Name</label>
+                <input type="text" #moName [value]="editMoObj.name" id="moName" placeholder="MobileName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="status" class="text-white">status</label>
+                <select #status [value]="editMoObj.status" class="form-control">
+                    <option value="Available">Available</option>
+                    <option value="OutOfStock">Out Of Stock</option>
+                </select>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-info" (click)="onUpdateMobile(moName ,status)">Update Mobile Product</button>
+            </div>
+        </div>
+    </div>
+</section>

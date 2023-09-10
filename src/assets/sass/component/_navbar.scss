@@ -1,0 +1,27 @@
+li.nav-item{
+    margin-right: 31px;
+    a.nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+.nav{
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    overflow: hidden;
+    
+}
+.nav a{
+    padding: 14px 16px;
+    float: left;
+    text-decoration: none;
+    color: #fff;
+}
+.nav a:hover{
+background-color:#fff;
+color: black;
+}
+.nav a.active{
+    background-color:#088;
+    color: white;
+}
