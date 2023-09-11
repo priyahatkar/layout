@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Imobile } from '../models/allInterface';
 import { Router } from '@angular/router';
+import { SanckBarService } from './sanck-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class MobileService {
       status : 'Available'
     },
   ]
-  constructor(private _router : Router) { }
+  constructor(private _router : Router, private _snackbarService : SanckBarService) { }
 
   getAllMobilesApi(){
     return this.mobileArray;
@@ -69,6 +70,7 @@ export class MobileService {
         mo.rating = moObj.rating;
         mo.status = moObj.status;
         this._router.navigate(['/mobile'])
+        this._snackbarService.openSnackBar(`Add to cart new ${mo.name} product`, 'Close')
       }
     })
   }

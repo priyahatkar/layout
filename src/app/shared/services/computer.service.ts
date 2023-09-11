@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Icomputer } from '../models/allInterface';
 import { Route, Router } from '@angular/router';
+import { SanckBarService } from './sanck-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class ComputerService {
       details:'Lenovo IdeaCentre AIO 3 Core i3 (8 GB DDR4/Windows 11 Home/23.8 Inch Screen/IdeaCentre AIO 3)  (Black)'
     }
   ]
-  constructor(private _router : Router) { }
+  constructor(private _router : Router, private _snackbarService : SanckBarService) { }
   getAllComputerApi(){
     return this.computerArray;
   }
@@ -63,6 +64,7 @@ export class ComputerService {
         comp.name = compObj.name;
         comp.status = compObj.status;
         this._router.navigate(['/computer'])
+        this._snackbarService.openSnackBar(`Add to cart new ${comp.name} product`, 'Close')
       }
     })
   }

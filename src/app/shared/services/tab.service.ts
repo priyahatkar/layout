@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Itab } from '../models/allInterface';
 import { Router } from '@angular/router';
+import { SanckBarService } from './sanck-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,8 @@ export class TabService {
       details : 'SAMSUNG Galaxy Tab A8 3 GB RAM 32 GB ROM 10.5 inch with Wi-Fi Only Tablet (Gray)',
     }
   ]
-  constructor(private _router : Router) { }
+  constructor(private _router : Router,
+    private _sanckbarService : SanckBarService) { }
 
   getAllTabApi(){
     return this.tabArray;
@@ -73,6 +75,7 @@ export class TabService {
         tab.price = tabObj.price;
         tab.rating = tabObj.rating;
         this._router.navigate(['/tab'])
+        this._sanckbarService.openSnackBar(`Add to cart new ${tab.name} product`, 'Close')
       }
     })
   }

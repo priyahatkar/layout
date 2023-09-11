@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Ilaptop } from '../models/allInterface';
 import { Router } from '@angular/router';
+import { SanckBarService } from './sanck-bar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,8 @@ public laptopArray : Array<Ilaptop> =[
   status : 'Available',
 }
 ]
-  constructor( private _router : Router) { }
+  constructor( private _router : Router,
+    private _snackbarService : SanckBarService) { }
 
   getAllLaptopApi(){
     return this.laptopArray;
@@ -68,6 +70,7 @@ public laptopArray : Array<Ilaptop> =[
         lap.name = editObj.name;
         lap.status = editObj.status;
         this._router.navigate(['/laptop'])
+        this._snackbarService.openSnackBar(`Add to cart new ${lap.name} product`, 'Close')
       }
     })
   }

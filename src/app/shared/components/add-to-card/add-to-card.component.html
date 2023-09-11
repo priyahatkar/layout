@@ -4,21 +4,24 @@
         <div class="col-md-8 offset-md-2">
             <ng-container *ngIf="addCardInfo.length > 0; else emitCard">
                 <div class="card my-4" *ngFor="let add of addCardInfo">
-                    
-                        <div class="card-body">
-                            <div class="row d-flex justify-content-center align-items-center">
-                                <div class="col-md-5">
-                                    <h2>{{add.name}}</h2>
-                                    <h3>Price : <strong>{{add.price}}</strong></h3>
-                                    <h3>Details : {{add.details}}</h3>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="imgInfo">
-                                        <img src="{{add.imgUrl}}" alt="{{add.name}}" title="{{add.name}}">
-                                    </div>
+                    <div class="card-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-md-5">
+                                <h2>{{add.name}}</h2>
+                                <h3>Price : <strong>{{add.price}}</strong></h3>
+                                <h3>Details : {{add.details}}</h3>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="imgInfo">
+                                    <img src="{{add.imgUrl}}" alt="{{add.name}}" title="{{add.name}}">
                                 </div>
                             </div>
+                            <div class="text-center mt-5">
+                                <button class="btn mx-4">PLACE ORDER</button>
+                                <button mat-flat-button [routerLink]="['/home']">REMOVE</button>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </ng-container>
             
@@ -30,7 +33,7 @@
                             </figure>
                             <h3>Missing Cart items?</h3>
                             <p>Login to see the items you added previously</p>
-                            <button class="btn btn-danger">Login</button>
+                            <button class="btn">Login</button>
                         </div>
                     </div>
                 </ng-template>
