@@ -28,7 +28,9 @@
                             </figure>
                         </div>
                         <div class="text-center">
-                            <button [routerLink]="['editLap']" class="btn btn-primary mx-3">Edit Laptop Details</button>
+                            <button [routerLink]="['editLap']" 
+                            [queryParamsHandling]="'preserve'"
+                            class="btn btn-primary mx-3">Edit Laptop Details</button>
                             <button class="btn btn-warning" [routerLink]="['/addToCard']"
                             (click)="onAddNewProduct()">Add To Cart</button>
                         </div>

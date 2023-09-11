@@ -11,12 +11,17 @@ import { ComputerService } from 'src/app/shared/services/computer.service';
 export class EditComputerComponent implements OnInit {
     public editCompObj !: Icomputer;
     public editCompId !:number;
+    public canEdit :boolean = false;
   constructor(private _route : ActivatedRoute,
                 private _computerService : ComputerService) { }
 
   ngOnInit(): void {
     this.editCompId = +this._route.snapshot.params['cId'];
     this.editCompObj = this._computerService.getSingleComputerApi(this.editCompId)
+
+    if(this._route.snapshot.queryParams['canEdit']=== 'Available'){
+      this.canEdit = true;
+    }
   }
 
   onUpdateProduct(pName:HTMLInputElement ,status : HTMLSelectElement){

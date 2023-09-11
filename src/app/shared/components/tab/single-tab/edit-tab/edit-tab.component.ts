@@ -11,13 +11,21 @@ import { TabService } from 'src/app/shared/services/tab.service';
 export class EditTabComponent implements OnInit {
   public tId !: number;
   public tabInfo !: Itab;
-  constructor(private _tabService : TabService, private _route: ActivatedRoute) { }
+  public canEdit : boolean =false;
+  constructor(private _tabService : TabService,
+                private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.tId = +this._route.snapshot.params['tabId']
-    console.log( this.tId);
+    // console.log( this.tId);
     this.tabInfo = this._tabService.getSingleTabApi(this.tId)
-    console.log( this.tabInfo);
+    // console.log( this.tabInfo);
+    
+    // console.log(this._route.snapshot.queryParams['canEdit']);
+    
+    if(this._route.snapshot.queryParams['canEdit']=== 'Available'){
+      this.canEdit = true;
+    }
   }
   
   onUpdateTab(tabName : HTMLInputElement,status : HTMLSelectElement){

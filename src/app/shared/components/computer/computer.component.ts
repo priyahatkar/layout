@@ -9,6 +9,7 @@ import { ComputerService } from '../../services/computer.service';
 })
 export class ComputerComponent implements OnInit {
   public compArray : Array<Icomputer> =[]
+  public searchProduct !: string
   constructor(private _compService : ComputerService) { }
 
   ngOnInit(): void {

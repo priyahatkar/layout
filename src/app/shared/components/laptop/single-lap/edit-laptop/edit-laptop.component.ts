@@ -11,6 +11,7 @@ import { LaptopService } from 'src/app/shared/services/laptop.service';
 export class EditLaptopComponent implements OnInit {
     public lapId !: number;
     public lapInfo !: Ilaptop;
+    public canEdit : boolean = false;
   constructor(private _route : ActivatedRoute, private _editService : LaptopService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,10 @@ export class EditLaptopComponent implements OnInit {
     console.log(this.lapId);
     this.lapInfo = this._editService.getSingleLaptopApi(this.lapId)
     console.log(this.lapInfo);
+
+    if(this._route.snapshot.queryParams['canEdit']=== 'Available'){
+      this.canEdit = true;
+    }
   }
 
   onUpdateLaptop(pName : HTMLInputElement,status : HTMLSelectElement){

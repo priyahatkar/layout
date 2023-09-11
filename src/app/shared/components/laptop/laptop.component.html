@@ -1,7 +1,9 @@
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <div class="card my-5" *ngFor="let lap of lapArray" [routerLink]="['/laptop', lap.lapId]">
+        <div class="card my-5" *ngFor="let lap of lapArray" 
+            [routerLink]="['/laptop', lap.lapId]"
+            [queryParams]="{canEdit : lap.status}">
             <div class="card-body">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md-4">

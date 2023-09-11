@@ -2,20 +2,21 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card my-4" *ngFor="let tab of tabArray"
-                [routerLink]="['/tab', tab.tabId]">
+                [routerLink]="['/tab', tab.tabId]"
+                [queryParams]="{canEdit :tab.status}">
                 <div class="card-body">
                     <div class="row d-flex justify-content-start align-items-center">
                         <div class="col-md-4">
                             <h2>{{tab.name}}</h2>
-                        <h3>Prize : <strong>{{tab.price}}</strong></h3>
+                        <h3>Price : <strong>{{tab.price}}</strong></h3>
                         <h3 [ngClass]="{
                             'text-danger' : tab.rating < '4.1',
                             'text-success' : tab.rating > '4.2'
-                        }">Rating : {{tab.rating}}</h3>
+                        }">Rating :  {{tab.rating}} <i class="fa-solid fa-star"></i></h3>
                         <h3 [ngClass]="{
                             'text-info': tab.status === 'Available',
                             'text-danger' : tab.status === 'OutOfStock'
-                        }">status : <strong>{{tab.status}}</strong> <i class="fa-solid fa-star"></i></h3>
+                        }">status : <strong>{{tab.status}}</strong></h3>
                         </div>
                         <div class="col-md-8">
                             <div class="imgInfo">

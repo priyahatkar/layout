@@ -2,22 +2,38 @@
 <section>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <div class="card my-4" *ngFor="let add of addCardInfo">
-                <div class="card-body">
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <div class="col-md-5">
-                            <h2>{{add.name}}</h2>
-                            <h3>Price : <strong>{{add.price}}</strong></h3>
-                            <h3>Details : {{add.details}}</h3>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="imgInfo">
-                                <img src="{{add.imgUrl}}" alt="{{add.name}}" title="{{add.name}}">
+            <ng-container *ngIf="addCardInfo.length > 0; else emitCard">
+                <div class="card my-4" *ngFor="let add of addCardInfo">
+                    
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-md-5">
+                                    <h2>{{add.name}}</h2>
+                                    <h3>Price : <strong>{{add.price}}</strong></h3>
+                                    <h3>Details : {{add.details}}</h3>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="imgInfo">
+                                        <img src="{{add.imgUrl}}" alt="{{add.name}}" title="{{add.name}}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </div>
-            </div>
+            </ng-container>
+            
+                <ng-template #emitCard>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <figure class="emitImg">
+                                <img src="https://rukminim2.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="addToCard" title="Emit Card">
+                            </figure>
+                            <h3>Missing Cart items?</h3>
+                            <p>Login to see the items you added previously</p>
+                            <button class="btn btn-danger">Login</button>
+                        </div>
+                    </div>
+                </ng-template>
         </div>
     </div>
 </section>

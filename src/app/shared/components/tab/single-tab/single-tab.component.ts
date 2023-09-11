@@ -31,7 +31,8 @@ export class SingleTabComponent implements OnInit {
       rating : this.tabInfo.rating,
       price : this.tabInfo.price,
       details : this.tabInfo.details,
-      status : this.tabInfo.status
+      status : this.tabInfo.status,
+      
     }
     this._addNewService.getAddNewItemsApi(obj)
   }

@@ -1,20 +1,21 @@
 <section>
     <div class="row">
         <div class="col-md-6 offset-md-3 my-5">
-            <div class="form-group">
-                <label for="tabName" class="text-white">Name</label>
-                <input type="text" #tabName id="tabName" [value]="tabInfo.name" placeholder="Tab Name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="status" class="text-white">status</label>
-                <select [value]="tabInfo.status" #status class="form-control">
-                    <option value="Available">Available</option>
-                    <option value="OutOfStock">Out Of Stock</option>
-                </select>
-            </div>
-            <div class="text-right">
-                <button class="btn btn-info" (click)="onUpdateTab(tabName ,status)">Update Mobile Product</button>
-            </div>
+                <div class="form-group">
+                    <label for="tabName" class="text-white">Name</label>
+                    <input type="text" #tabName id="tabName" [value]="tabInfo.name"
+                    [disabled]="!canEdit" placeholder="Tab Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="status" class="text-white">status</label>
+                    <select [disabled]="!canEdit" [value]="tabInfo.status" #status class="form-control">
+                        <option value="Available">Available</option>
+                        <option value="OutOfStock">Out Of Stock</option>
+                    </select>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-info" [disabled]="!canEdit" (click)="onUpdateTab(tabName ,status)">Update Mobile Product</button>
+                </div>>
         </div>
     </div>
 </section>

@@ -23,12 +23,12 @@
                         }">Rating : <strong>{{moInfo.rating}}</strong> <i class="fa-solid fa-star"></i></h3>
                     </div>
                     <div class="col-md-5">
-                        <div class="imgInfos">
+                        <div class="imgInfo">
                             <img [ngClass]="" src="{{moInfo.imgUrl}}" alt="{{moInfo.name}}" title="{{moInfo.name}}">
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary mx-3" [routerLink]="['editMo']">Edit Mobile Details</button>
+                        <button class="btn btn-primary mx-3" [routerLink]="['editMo']" [queryParamsHandling]="'preserve'">Edit Mobile Details</button>
                         <button class="btn btn-warning" [routerLink]="['/addToCard']"
                         (click)="onAddNewProduct()">Add To Cart</button>
                     </div>

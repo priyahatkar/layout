@@ -24,7 +24,9 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary mx-3" [routerLink]="['editTab']">Edit Tab Details</button>
+                        <button class="btn btn-primary mx-3" [routerLink]="['editTab']"
+                        [queryParamsHandling]="'preserve'"
+                        >Edit Tab Details</button>
                         <button class="btn btn-warning" [routerLink]="['/addToCard']"
                         (click)="onAddNewProduct()">Add To Cart</button>
                     </div>

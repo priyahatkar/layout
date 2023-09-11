@@ -21,6 +21,7 @@ import { EditMobileComponent } from './shared/components/mobile/single-mo/edit-m
 import { SingleTabComponent } from './shared/components/tab/single-tab/single-tab.component';
 import { AddToCardComponent } from './shared/components/add-to-card/add-to-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { AddToCardComponent } from './shared/components/add-to-card/add-to-card.
     EditMobileComponent,
     TabComponent,
     SingleTabComponent,
-    AddToCardComponent,
+    AddToCardComponent
   ],
   imports: [
     BrowserModule,

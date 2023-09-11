@@ -11,6 +11,7 @@ import { MobileService } from 'src/app/shared/services/mobile.service';
 export class EditMobileComponent implements OnInit {
   public editMoObj !: Imobile;
   public editMoId !: number;
+  public canEdit : boolean = false;
   constructor(private _route : ActivatedRoute, 
                 private _mobileService : MobileService) { }
 
@@ -19,6 +20,9 @@ export class EditMobileComponent implements OnInit {
     console.log( this.editMoId);
     this.editMoObj = this._mobileService.getSingleMoApi(this.editMoId)
     
+    if(this._route.snapshot.queryParams['canEdit'] === 'Available'){
+      this.canEdit = true;
+    }
   }
   onUpdateMobile(moName : HTMLInputElement ,status : HTMLSelectElement){
     let obj : Imobile = {
