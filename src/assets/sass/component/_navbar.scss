@@ -7,7 +7,7 @@ li.nav-item{
 }
 .nav{
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color:  transparent;
     overflow: hidden;
     
 }
@@ -18,16 +18,14 @@ li.nav-item{
     color: #fff;
 }
 .nav a:hover{
-background-color:#fff;
+background-color: transparent;
 color: black;
 }
 .nav a.active{
     background-color:#088;
     color: white;
 }
-// .navbar-transparent{
-//     background-color: rgba(0,0,0,.3);
-//     overflow: hidden;
-//     // mix-blend-mode: multiply;
-//     // filter: contrast(1);
-// }
+
+.navbar{
+    background-color: transparent;
+}

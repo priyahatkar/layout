@@ -10,7 +10,7 @@ export class SanckBarService {
 
   openSnackBar(message: string, action: string){
     this._snackBar.open(message, action,{
-      duration : 3000,
+      duration : 1000,
       horizontalPosition : 'start',
       verticalPosition : 'top'
     });

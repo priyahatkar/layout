@@ -15,6 +15,7 @@ import { EditMobileComponent } from './shared/components/mobile/single-mo/edit-m
 import { EditTabComponent } from './shared/components/tab/single-tab/edit-tab/edit-tab.component';
 import { SingleTabComponent } from './shared/components/tab/single-tab/single-tab.component';
 import { AddToCardComponent } from './shared/components/add-to-card/add-to-card.component';
+import { OrderFormComponent } from './shared/components/add-to-card/order-form/order-form.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,9 @@ const routes: Routes = [
   },
   {
     path : 'addToCard', component : AddToCardComponent
+  },
+  {
+    path : 'addToCard/:addId', component : OrderFormComponent
   },
   {
     path : 'mobile', component : MobileComponent

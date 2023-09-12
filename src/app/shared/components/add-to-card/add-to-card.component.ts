@@ -15,4 +15,14 @@ export class AddToCardComponent implements OnInit {
     this.addCardInfo = this._addCardService.getAddNewItems()
   }
 
+
+  onPassRemove(addId : number){
+    
+    let getConfirm = confirm(`Are you sure, You want to remove this product?`);
+    if(getConfirm){
+      this._addCardService.removeItemApi(addId)
+      return
+    }
+    return
+  }
 }

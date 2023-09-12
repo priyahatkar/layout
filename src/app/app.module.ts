@@ -22,6 +22,7 @@ import { EditLaptopComponent } from './shared/components/laptop/single-lap/edit-
 import { EditMobileComponent } from './shared/components/mobile/single-mo/edit-mobile/edit-mobile.component';
 import { SingleTabComponent } from './shared/components/tab/single-tab/single-tab.component';
 import { AddToCardComponent } from './shared/components/add-to-card/add-to-card.component';
+import { OrderFormComponent } from './shared/components/add-to-card/order-form/order-form.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AddToCardComponent } from './shared/components/add-to-card/add-to-card.
     EditMobileComponent,
     TabComponent,
     SingleTabComponent,
-    AddToCardComponent
+    AddToCardComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
